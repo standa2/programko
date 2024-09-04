@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+*{
+    font-family: "Roboto",serif;
+}
+
+body {
+    background-color: #FFEBCD;
+}
+
+.Nadpis {
+    color: black;
+    font-size: 4em;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.boxy {
+    /* Center horizontally*/
+    margin: 0 auto;
+}
+
+.prvni {
+
+    display: inline-block;
+    background-color: #B9E6FF;
+    height: 350px;
+    width: 250px;
+    border: black solid;
+    border-radius: 5%;
+    margin: 100px;
+}
+
+.druhy {
+
+    display: inline-block;
+    background-color: #B9E6FF;
+    height: 350px;
+    width: 250px;
+    border: black solid;
+    border-radius: 5%;
+    margin: 100px;
+}
+
+.treti {
+
+    display: inline-block;
+    background-color: #B9E6FF;
+    height: 350px;
+    width: 250px;
+    border: black solid;
+    border-radius: 5%;
+    margin: 100px;
+
+}
+
+.button {
+    margin: 50%;
+    background-color: #FCDCA9;
+    text-align: center;
+    border-radius: 90%;
+    height: 40px;
+    width: 80px;
+    border-color: black solid;
+
+}

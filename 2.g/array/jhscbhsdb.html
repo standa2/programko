@@ -1,0 +1,32 @@
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Array</title>
+    </head>
+    <body>
+        <h1>Přidej postavu do Mickyho Klubíku</h1>
+        <input type="text" id="input" />
+        <button id="tlacitko">boop</button>
+        <p id="out"></p>
+
+        <script>
+            const tlacitko = document.querySelector("#tlacitko"),
+                input = document.querySelector("#input"),
+                out = document.getElementById("#out"),
+                MickyKlubik = ["Goofy", "Micky", "Donald"]
+
+            tlacitko.addEventListener("click", ZmenaNadpis)
+
+            function ZmenaNadpis() {
+                MickyKlubik.push(input.value)
+                out.innerText = ""
+
+                for (let i = 0; i < MickyKlubik.length; i++) {
+                    out.innerText = MickyKlubik[i] + "\n"
+                }
+            }
+        </script>
+    </body>
+</html>

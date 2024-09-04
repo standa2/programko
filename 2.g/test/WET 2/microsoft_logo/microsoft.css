@@ -1,0 +1,35 @@
+.ctverce{
+    margin: 300px;
+}
+
+.red{
+    display: inline-block;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.green{
+    display: inline-block;
+    background-color: limegreen;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.blue{
+    display: inline-block;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.orange{
+    display: inline-block;
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+}

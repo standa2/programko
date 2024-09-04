@@ -1,0 +1,22 @@
+.black{
+    background-color: black;
+    color: black;
+    width:500px ;
+    height: 100px;
+    margin-left: 300px;
+    margin-top: 300px;}
+
+.red{
+    background-color: red;
+    color: red;
+    width:500px ;
+    height: 100px;
+    margin-left: 300px;}
+
+.yellow{
+    background-color: yellow;
+    color: yellow;
+    width:500px ;
+    height: 100px;
+    margin-left: 300px;}
+

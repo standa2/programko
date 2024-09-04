@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Zadej Slovo</h1>
+        <input type="text" id="input" />
+        <button id="tlacitko">Přidej Slovo</button>
+        <h2>Seznam slov:</h2>
+        <p id="slova"></p>
+        <button id="popelka">Zavolej Popelku</button>
+        <h2>Krátká slova:</h2>
+        <p id="short"></p>
+        <h2>Dlouhá slova:</h2>
+        <p id="long"></p>
+        <script>
+            const tlacitko = document.querySelector("#tlacitko"),
+                popelka = document.querySelector("#popelka"),
+                input = document.querySelector("#input"),
+                slova = document.querySelector("#slova"),
+                short = document.querySelector("#short"),
+                long = document.querySelector("#long"),
+                Seznamslov = [],
+                Kratkaslova = [],
+                Dlouhaslova = []
+
+            tlacitko.addEventListener("click", RozsireniSeznamu)
+
+            function RozsireniSeznamu() {
+                let textInput = input.value
+                Seznamslov.push(input.value)
+                input.value = ""
+                slova.innerText = Seznamslov
+                short.innerText = Kratkaslova
+                long.innerText = Dlouhaslova
+                if (input.value.length > 4) {
+                    Dlouhaslova.push(input.value)
+                } else {
+                    Kratkaslova.push(input.value)
+                }
+            }
+        </script>
+    </body>
+</html>

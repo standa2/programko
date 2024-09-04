@@ -1,0 +1,26 @@
+.images {
+    width:300px;
+    height:auto;
+    border:5px solid #4c8f4c;
+    border-radius:5%;
+}
+.headings {
+    color:#4c8f4c ;
+}
+li{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(161, 117, 76, 0.822);
+}
+.buttons {
+    background-color: yellowgreen;
+    color: saddlebrown;
+    border:5px solid goldenrod;
+}
+.comment-input {
+    height: 150px;
+    width: 300px;
+    resize: none;
+}
+body {
+    background-color: rgb(185, 185, 145);
+}
