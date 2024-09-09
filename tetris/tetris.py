@@ -7,6 +7,7 @@ pygame.init()
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((1280,800))
 font = pygame.font.Font(None, 60)
+font2 = pygame.font.Font(None, 40)
 
 start = World("assets/Start/start.tmx", screen)
 game = World("assets/Map/mapa.tmx", screen)
@@ -15,7 +16,6 @@ tutorial = World("assets/Tutorial/tutorial.tmx", screen)
 start_img = pygame.image.load("assets/Buttons/start.png")
 play_img = pygame.image.load("assets/Buttons/play.png")
 pause_img = pygame.image.load("assets/Buttons/pause.png")
-
 
 drop_img = pygame.image.load("assets/Texts/drop.png")
 rotate_img = pygame.image.load("assets/Texts/rotate.png")
@@ -35,10 +35,13 @@ S_img = pygame.image.load("assets/Block_images/S.png")
 T_img = pygame.image.load("assets/Block_images/T.png")
 I_img = pygame.image.load("assets/Block_images/I.png")
 
+score_img = pygame.image.load("assets/Texts/score.png")
+top_score_img = pygame.image.load("assets/Texts/top_score.png")
 
-start_button = button.Button(470, 625, start_img, 1)
-pause_button = button.Button(70, 180, pause_img, 0.9)
-play_button = button.Button(870, 650, play_img, 1)
+
+start_button = button.Button(450, 620, start_img, 10)
+pause_button = button.Button(70, 185, pause_img, 6)
+play_button = button.Button(870, 650, play_img, 8)
 
 up_button = button.Button(870, 230, up_img, 1)
 down_button = button.Button(870, 330, down_img, 1)
@@ -47,6 +50,15 @@ right_button = button.Button(870, 530, right_img, 1)
 
 points = 0
 top_points = 0
+
+L_points = 0
+J_points = 0
+S_points = 0
+Z_points = 0
+O_points = 0
+T_points = 0
+I_points = 0
+
 game_started = True
 game_playing = False
 game_tutorial = False
@@ -71,10 +83,10 @@ while True:
         tutorial.draw_background()
 
         
-        screen.blit(drop_img, [270, 330])
-        screen.blit(rotate_img, [270, 230])
-        screen.blit(move_left_img, [260, 430])
-        screen.blit(move_right_img, [265, 530])
+        screen.blit(drop_img, [270, 350])
+        screen.blit(rotate_img, [270, 250])
+        screen.blit(move_left_img, [270, 450])
+        screen.blit(move_right_img, [270, 550])
 
         if up_button.draw(screen):
             pass
@@ -93,16 +105,14 @@ while True:
         pygame.display.update()
         game.draw_background()
 
-        score_text = font.render(f"SCORE", False, "#FFFFFF")
-        top_score_text = font.render(f"TOP SCORE", False, "#FFFFFF")
-        score_points = font.render(f"{points}", False, "#FFFFFF")
-        top_score_points = font.render(f"{top_points}", False, "#FFFFFF")
+        screen.blit(score_img, [1015, 320])
+        screen.blit(top_score_img, [980, 500])
 
-        screen.blit(score_text, (1010 , 330))
-        screen.blit(score_points, (1070 , 400))
+        score = font.render(f"{points : 04d}", False, "#FFFFFF")
+        top_score = font.render(f"{top_points : 04d}", False, "#FFFFFF")
 
-        screen.blit(top_score_text, (960 , 500))
-        screen.blit(top_score_points, (1070 , 570))
+        screen.blit(score, (1035 , 400))
+        screen.blit(top_score, (1035 , 570))
 
         screen.blit(L_img, [80, 340])
         screen.blit(J_img, [80, 380])
@@ -111,6 +121,23 @@ while True:
         screen.blit(O_img, [80, 500])
         screen.blit(T_img, [80, 540])
         screen.blit(I_img, [80, 580])
+
+        L_score = font2.render(f"{L_points : 04d}", False, "#FFFFFF")
+        J_score = font2.render(f"{J_points : 04d}", False, "#FFFFFF")
+        Z_score = font2.render(f"{Z_points : 04d}", False, "#FFFFFF")
+        S_score = font2.render(f"{S_points : 04d}", False, "#FFFFFF")
+        O_score = font2.render(f"{O_points : 04d}", False, "#FFFFFF")
+        T_score = font2.render(f"{T_points : 04d}", False, "#FFFFFF")
+        I_score = font2.render(f"{I_points : 04d}", False, "#FFFFFF")
+
+        screen.blit(L_score, (200 , 335))
+        screen.blit(J_score, (200 , 375))
+        screen.blit(Z_score, (200 , 415))
+        screen.blit(S_score, (200 , 455))
+        screen.blit(O_score, (200 , 495))
+        screen.blit(T_score, (200 , 535))
+        screen.blit(I_score, (200 , 575))
+
 
         if pause_button.draw(screen):
             pass
