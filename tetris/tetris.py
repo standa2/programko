@@ -83,10 +83,10 @@ while True:
         tutorial.draw_background()
 
         
-        screen.blit(drop_img, [270, 350])
-        screen.blit(rotate_img, [270, 250])
-        screen.blit(move_left_img, [270, 450])
-        screen.blit(move_right_img, [270, 550])
+        screen.blit(drop_img, [270, 340])
+        screen.blit(rotate_img, [270, 240])
+        screen.blit(move_left_img, [270, 440])
+        screen.blit(move_right_img, [270, 540])
 
         if up_button.draw(screen):
             pass
