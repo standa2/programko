@@ -27,6 +27,12 @@ down_img = pygame.image.load("assets/Keys/down.png")
 left_img = pygame.image.load("assets/Keys/left.png")
 right_img = pygame.image.load("assets/Keys/right.png")
 
+aply_img = pygame.image.load("assets/Buttons/aply.png")
+resume_img = pygame.image.load("assets/Buttons/resume.png")
+quit_img = pygame.image.load("assets/Buttons/quit.png")
+new_game_img = pygame.image.load("assets/Buttons/new_game.png")
+
+
 L_img = pygame.image.load("assets/Block_images/L.png")
 J_img = pygame.image.load("assets/Block_images/J.png")
 O_img = pygame.image.load("assets/Block_images/O.png")
@@ -40,6 +46,7 @@ top_score_img = pygame.image.load("assets/Texts/top_score.png")
 
 
 start_button = button.Button(450, 620, start_img, 10)
+aply_button = button.Button(870, 250, aply_img, 8)
 pause_button = button.Button(70, 185, pause_img, 6)
 play_button = button.Button(870, 650, play_img, 8)
 
@@ -47,6 +54,10 @@ up_button = button.Button(870, 230, up_img, 1)
 down_button = button.Button(870, 330, down_img, 1)
 left_button = button.Button(870, 430, left_img, 1)
 right_button = button.Button(870, 530, right_img, 1)
+
+resume_button = button.Button(450, 450, resume_img, 8)
+quit_button = button.Button(450, 650, quit_img, 8)
+new_game_button = button.Button(450, 250, new_game_img, 8)
 
 points = 0
 top_points = 0
@@ -60,6 +71,8 @@ T_points = 0
 I_points = 0
 
 game_started = True
+game_choose = False
+game_pause = False
 game_playing = False
 game_tutorial = False
 
@@ -75,8 +88,31 @@ while True:
 
         if start_button.draw(screen):
             game_started = False
+            game_choose = True
+
+    if game_choose == True:
+        pygame.display.update()
+        tutorial.draw_background()
+
+
+        if aply_button.draw(screen):
+            game_choose = False
             game_tutorial = True
 
+    if game_pause == True:
+        pygame.display.update()
+        tutorial.draw_background()
+
+        if resume_button.draw(screen):
+            game_pause = False
+            game_playing = True
+
+        if quit_button.draw(screen):
+            pygame.quit()
+
+        if new_game_button.draw(screen):
+            game_pause = False
+            game_choose = True
 
     if game_tutorial == True:
         pygame.display.update()
@@ -140,7 +176,8 @@ while True:
 
 
         if pause_button.draw(screen):
-            pass
+            game_pause = True
+            game_playing = False
 
     clock.tick(60)
     
