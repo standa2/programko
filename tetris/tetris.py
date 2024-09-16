@@ -10,27 +10,28 @@ font = pygame.font.Font(None, 60)
 font2 = pygame.font.Font(None, 40)
 
 start = World("assets/Start/start.tmx", screen)
-game = World("assets/Map/mapa.tmx", screen)
+game = World("assets/PLay/mapa.tmx", screen)
 tutorial = World("assets/Tutorial/tutorial.tmx", screen)
+choosing = World("assets/Choose/choosing.tmx", screen)
 
-start_img = pygame.image.load("assets/Buttons/start.png")
-play_img = pygame.image.load("assets/Buttons/play.png")
-pause_img = pygame.image.load("assets/Buttons/pause.png")
+start_img = pygame.image.load("assets/Start/start.png")
+play_img = pygame.image.load("assets/Tutorial/play.png")
+pause_img = pygame.image.load("assets/PLay/pause.png")
 
-drop_img = pygame.image.load("assets/Texts/drop.png")
-rotate_img = pygame.image.load("assets/Texts/rotate.png")
-move_left_img = pygame.image.load("assets/Texts/left.png")
-move_right_img = pygame.image.load("assets/Texts/right.png")
+drop_img = pygame.image.load("assets/Tutorial/Texts/drop.png")
+rotate_img = pygame.image.load("assets/Tutorial/Texts/rotate.png")
+move_left_img = pygame.image.load("assets/Tutorial/Texts/left.png")
+move_right_img = pygame.image.load("assets/Tutorial/Texts/right.png")
 
-up_img = pygame.image.load("assets/Keys/up.png")
-down_img = pygame.image.load("assets/Keys/down.png")
-left_img = pygame.image.load("assets/Keys/left.png")
-right_img = pygame.image.load("assets/Keys/right.png")
+up_img = pygame.image.load("assets/Tutorial/Keys/up.png")
+down_img = pygame.image.load("assets/Tutorial/Keys/down.png")
+left_img = pygame.image.load("assets/Tutorial/Keys/left.png")
+right_img = pygame.image.load("assets/Tutorial/Keys/right.png")
 
-aply_img = pygame.image.load("assets/Buttons/aply.png")
-resume_img = pygame.image.load("assets/Buttons/resume.png")
-quit_img = pygame.image.load("assets/Buttons/quit.png")
-new_game_img = pygame.image.load("assets/Buttons/new_game.png")
+aply_img = pygame.image.load("assets/Choose/aply.png")
+resume_img = pygame.image.load("assets/Play/Menu/resume.png")
+quit_img = pygame.image.load("assets/Play/Menu/quit.png")
+new_game_img = pygame.image.load("assets/Play/Menu/new_game.png")
 
 
 L_img = pygame.image.load("assets/Block_images/L.png")
@@ -41,12 +42,12 @@ S_img = pygame.image.load("assets/Block_images/S.png")
 T_img = pygame.image.load("assets/Block_images/T.png")
 I_img = pygame.image.load("assets/Block_images/I.png")
 
-score_img = pygame.image.load("assets/Texts/score.png")
-top_score_img = pygame.image.load("assets/Texts/top_score.png")
+score_img = pygame.image.load("assets/Play/score.png")
+top_score_img = pygame.image.load("assets/Play/top_score.png")
 
 
 start_button = button.Button(450, 620, start_img, 10)
-aply_button = button.Button(870, 250, aply_img, 8)
+aply_button = button.Button(150, 620, aply_img, 8)
 pause_button = button.Button(70, 185, pause_img, 6)
 play_button = button.Button(870, 650, play_img, 8)
 
@@ -92,7 +93,7 @@ while True:
 
     if game_choose == True:
         pygame.display.update()
-        tutorial.draw_background()
+        choosing.draw_background()
 
 
         if aply_button.draw(screen):

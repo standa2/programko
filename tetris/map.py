@@ -10,7 +10,7 @@ class World:
         for layer in self.data.visible_layers:
             setattr(self, layer.name, self.data.get_layer_by_name(layer.name))
 
-        self.background = pygame.Surface((self.data.width*self.data.tilewidth, self.data.height*self.data.tileheight))
+        self.background = pygame.Surface((self.data.width*self.data.tilewidth, self.data.height*self.data.tileheight), pygame.FULLSCREEN)
         self.screen = screen        
         
     def draw_background(self):
