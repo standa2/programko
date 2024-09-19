@@ -1,7 +1,7 @@
 import tkinter as tk
 
 root = tk.Tk()
-root.title = ("DI DO CHUJE")
+root.title = ("nas oblibeny ucitel honzik")
 root.geometry("400x300")
 
 label = tk.Label(root, text = "ZAŽIJEŠ AMERIKU TY ZMRDE")

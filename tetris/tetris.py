@@ -18,6 +18,8 @@ start_img = pygame.image.load("assets/Start/start.png")
 play_img = pygame.image.load("assets/Tutorial/play.png")
 pause_img = pygame.image.load("assets/PLay/pause.png")
 
+menu_img = pygame.image.load("assets/PLay/Menu/menu.png")
+
 drop_img = pygame.image.load("assets/Tutorial/Texts/drop.png")
 rotate_img = pygame.image.load("assets/Tutorial/Texts/rotate.png")
 move_left_img = pygame.image.load("assets/Tutorial/Texts/left.png")
@@ -51,14 +53,14 @@ aply_button = button.Button(150, 620, aply_img, 8)
 pause_button = button.Button(70, 185, pause_img, 6)
 play_button = button.Button(870, 650, play_img, 8)
 
-up_button = button.Button(870, 230, up_img, 1)
-down_button = button.Button(870, 330, down_img, 1)
-left_button = button.Button(870, 430, left_img, 1)
-right_button = button.Button(870, 530, right_img, 1)
+up_button = button.Button(830, 230, up_img, 1)
+down_button = button.Button(830, 330, down_img, 1)
+left_button = button.Button(830, 430, left_img, 1)
+right_button = button.Button(830, 530, right_img, 1)
 
-resume_button = button.Button(450, 450, resume_img, 8)
-quit_button = button.Button(450, 650, quit_img, 8)
-new_game_button = button.Button(450, 250, new_game_img, 8)
+resume_button = button.Button(490, 400, resume_img, 8)
+quit_button = button.Button(490, 550, quit_img, 8)
+new_game_button = button.Button(470, 250, new_game_img, 8)
 
 points = 0
 top_points = 0
@@ -102,7 +104,7 @@ while True:
 
     if game_pause == True:
         pygame.display.update()
-        tutorial.draw_background()
+        screen.blit(menu_img, [200, 150])
 
         if resume_button.draw(screen):
             game_pause = False
@@ -120,10 +122,10 @@ while True:
         tutorial.draw_background()
 
         
-        screen.blit(drop_img, [270, 340])
-        screen.blit(rotate_img, [270, 240])
-        screen.blit(move_left_img, [270, 440])
-        screen.blit(move_right_img, [270, 540])
+        screen.blit(drop_img, [350, 340])
+        screen.blit(rotate_img, [350, 240])
+        screen.blit(move_left_img, [350, 440])
+        screen.blit(move_right_img, [350, 540])
 
         if up_button.draw(screen):
             pass
