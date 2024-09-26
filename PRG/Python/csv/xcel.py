@@ -5,7 +5,7 @@ import csv
 #    for x in reader:
 #        print(x)
 
-cesta = "H:\\WET\\PRG\\Python\\data.csv"
+cesta = "H:\\WET\\PRG\\Python\\csv\\data.csv"
 with open(cesta, "w", newline="") as file:
     jmeno = input("Zadej meno: ")
     pocet = int(input("Zadej pocet: "))

@@ -22,28 +22,55 @@
     let body = document.querySelector ("body")
     let list = [1, 1, 2, 3, 4,]
     tlacitko.addEventListener("click", zmenNadpis)
+    let pocet1 = 0
+    let pocet2 = 0
+    let avarage = 0
     
     function zmenNadpis () {
         let textInputu = input.value
-        let pocet1 = 0
-        let pocet2 = 0
+
+        let znamka2 = Math.floor(Math.random() * 5)+1
+        let znamka1 = list[Math.floor(Math.random() * list.length)]
+
 
         if (textInputu === "dana") { 
-            random = Math.floor(Math.random() * list.length)
-            nadpis.innerText = list[random];
-            pocet2 = pocet2 + 1
-            pocet1 = pocet1 + random
-            avarage = pocet1 / pocet2
-            nadpisb.innerText = avarage
-
-        }else {
-            nadpis.innerText = Math.floor(Math.random() * 5)+1;
-            pocet2 = pocet2 + 1
-            pocet1 = pocet1 + random
-            avarage = pocet1 / pocet2
-            nadpisb.innerText = avarage
-
+            pocet1 += znamka1;
+            pocet2 ++;
+            avarage = pocet1 / pocet2;
+            nadpis.innerText = znamka1;
+            nadpisb.innerText = avarage.toFixed(2);
+        
+        }else{
+            pocet1 += znamka2;
+            pocet2 ++;
+            avarage = pocet1 / pocet2;
+            nadpis.innerText = znamka2;
+            nadpisb.innerText = avarage.toFixed(2);
         }
+
+        if (znamka1 == 1){
+            body.style.backgroundColor = "green"
+        }else if (znamka1 == 2){
+            body.style.backgroundColor = "skyblue"
+        }else if (znamka1 == 3){
+            body.style.backgroundColor = "yellow"
+        }else if (znamka1 == 4){
+            body.style.backgroundColor = "orange"
+        }else if (znamka1 == 5){
+            body.style.backgroundColor = "red"
+        }
+        if (znamka2 == 1){
+            body.style.backgroundColor = "green"
+        }else if (znamka2 == 2){
+            body.style.backgroundColor = "skyblue"
+        }else if (znamka2 == 3){
+            body.style.backgroundColor = "yellow"
+        }else if (znamka2 == 4){
+            body.style.backgroundColor = "orange"
+        }else if (znamka2 == 5){
+            body.style.backgroundColor = "red"
+        }
+
     };
     
     </script>

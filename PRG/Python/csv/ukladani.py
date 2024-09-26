@@ -1,4 +1,4 @@
-cesta = "H:\\WET\\PRG\\Python\\data.txt"
+cesta = "H:\\WET\\PRG\\Python\\csv\\data.txt"
 with open(cesta, "r") as file :
     print(file.read())
 
