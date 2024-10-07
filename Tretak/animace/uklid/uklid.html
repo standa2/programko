@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .strecha {
+                width: 0;
+                height: 0;
+                border-left: 200px solid transparent;
+                border-right: 200px solid transparent;
+                border-bottom: 200px solid black;
+            }
+            .domecek {
+                height: 400px;
+                width: 350px;
+                border: 5px solid #bc4a3c;
+            }
+            .koste {
+                width: 70px;
+                animation: zamataj 1s ease forwards infinite alternate,
+                otacaj 0.1s ease forwards infinite ;
+            }
+
+            @keyframes zamataj{
+                50% {
+                    translate: 0px 180px;
+                }
+                75% {
+                    translate: 280px 180px;
+                }
+                100% {
+                    translate: 280px 0px;
+                }
+            }
+            
+            @keyframes otacaj {
+                25%{
+                    rotate: 40deg;
+                }
+                50%{
+                    rotate: 0deg;
+                }
+                75%{
+                    rotate: -40deg;
+                }
+                100%{
+                    rotate: 0deg;
+                }
+                
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="strecha"></div>
+            <div class="domecek">
+                <img class="koste" src="koste.png" alt="">
+            </div>
+            
+        </div>
+    </body>
+</html>

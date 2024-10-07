@@ -1,0 +1,29 @@
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Prezenčka</title>
+        <style>
+            html {
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <div>Bakaláře:</div>
+        <ul id="seznam"></ul>
+    </body>
+    <script>
+    let number = window.prompt("Kolik tady náš pán standa dostane jedniček za tuto práci:");
+    let list = document.getElementById("seznam");
+
+    for (let i = 0; i < number; i++) {
+        let listItem = document.createElement("li");
+        listItem.textContent = "jednička";
+        list.appendChild(listItem);
+        }
+       
+    </script>
+</head>
+
+</html>

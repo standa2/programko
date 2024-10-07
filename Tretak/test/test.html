@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test</title>
+        <style>
+            body {
+                font-family: monospace;
+                font-size: 32px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 35px;
+            }
+            .tlacitko {
+                padding: 10px;
+                font-size: 20px;
+                margin: 10px;
+            }
+
+            .platno {
+                border: 2px solid black;
+                width: 800px;
+                height: 500px;
+                margin: auto;
+            }
+
+            .ctverec {
+                height: 50px;
+                width: 50px;
+                background-color: green;
+                border: 1px solid black;
+                display: inline-block;
+            }
+
+            .kolecko {
+                height: 50px;
+                width: 50px;
+                background-color: yellow;
+                border-radius: 50%;
+                border: 1px solid black;
+                display: inline-block;
+            }
+
+            .text-box {
+                display: inline-block;
+            }
+
+            .obrazek {
+                position: relative;
+                top: 0px;
+                right: -706px;
+                width: 50px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Picasso</h1>
+        <img class="obrazek" src="hide.png" alt="" />
+        <div class="platno"></div>
+        <button id="tlacitkoText" class="tlacitko">Text</button><br />
+        <button id="tlacitkoKolecka" class="tlacitko">Kolečka</button><br />
+        <button id="tlacitkoCtverce" class="tlacitko">Čtverečky</button>
+
+        <script>
+            const platno = document.querySelector(".platno")
+            const tlacitkoCtverce = document.querySelector("#tlacitkoCtverce")
+            const tlacitkoKolecka = document.querySelector("#tlacitkoKolecka")
+            const tlacitkoText = document.querySelector("#tlacitkoText")
+            const obrazek = document.querySelector(".obrazek")
+            const wrapper = document.querySelector(".wrappper")
+
+            tlacitkoCtverce.addEventListener("click", kresliCtverec)
+            tlacitkoKolecka.addEventListener("click", kresliKolecko)
+            tlacitkoText.addEventListener("click", kresliText)
+            obrazek.addEventListener("click", hide)
+
+            function kresliCtverec() {
+                for (let i = 0; i < 5; i++) {
+                    let novyCtverec = document.createElement("div")
+                    novyCtverec.classList.add("ctverec")
+                    platno.appendChild(novyCtverec)
+                }
+            }
+
+            function kresliKolecko() {
+                for (let i = 0; i < 5; i++) {
+                    let novyKolo = document.createElement("div")
+                    novyKolo.classList.add("kolecko")
+                    platno.appendChild(novyKolo)
+                }
+            }
+
+            function kresliText() {
+                for (let i = 0; i < 5; i++) {
+                    let novyText = document.createElement("div")
+                    novyText.classList.add("text-box")
+                    novyText.textContent = "neco"
+                    platno.appendChild(novyText)
+                }
+            }
+            function hide() {
+                document.body.style.display = "none"
+            }
+        </script>
+    </body>
+</html>

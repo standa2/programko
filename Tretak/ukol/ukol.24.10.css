@@ -1,0 +1,37 @@
+body {
+    text-align: center;
+    background-color: #AF916D;
+}
+#druhe {
+    display: none;
+}
+#moon {
+    position: relative;
+    top: 100px;
+    left: -706px;
+    width: 100px;
+    height: 100px;
+}
+#sun {
+    position: relative;
+    top: 100px;
+    left: -706px;
+    width: 100px;
+    height: 100px;
+}
+#nadpis1 {
+    font-family: 'Merriweather', serif;
+    color: #D8D7BF;
+}
+#text1 {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+#nadpis2 {
+    font-family: 'Merriweather', serif;
+    color: #D8D7BF;
+}
+#text2 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="ukol.24.10.css" />
+    </head>
+    <body id="body1">
+        <div id="prve">
+            <img
+                id="moon"
+                class="images"
+                src="https://png.pngtree.com/png-clipart/20210310/original/pngtree-the-surface-of-a-round-moon-png-image_5955908.png"
+                alt=""
+            /><br />
+            <h1 id="nadpis1">
+                Tento ukol je fakt Blbej
+            </h1>
+
+            <div id="text1">
+                boris proste ty nam musis dat ukol kdyz muzem mit volnou hodinu doufam ze aspon za to nebudes davat petky jenom jednicky chceme nic jinyho neberu s pozdravem standokan.
+            </div>
+
+            <button id="button">máčk</button>
+            <br />
+        </div>
+        <div id="druhe">
+            <img
+                id="sun"
+                class="images"
+                src="https://static.vecteezy.com/system/resources/previews/009/344/657/original/sun-transparent-background-free-png.png"
+                alt=""
+            /><br />
+
+            <h1 id="nadpis2">
+                Tento ukol je jeste horsi
+            </h1>
+
+            <div id="text2">
+                hej videl jsem proste ten treti ukol a ja jsem se s tim tak sral doma bez zadnych predeslich praci a nevedel jsem vubec a ty mas tu drzost mi rict ze to mam z chat gpt coze to bych nikdy neudelal ja mam nejakou pichu hej neser.
+            </div>
+
+            <button id="button">máčk</button>
+        </div>
+    </body>
+    <script>
+        const moon = document.querySelector("#moon")
+        const sun = document.querySelector("#sun")
+        moon.addEventListener("click", moonzmena)
+        sun.addEventListener("click", sunzmena)
+
+        function moonzmena() {
+            prve.style.display = "none";
+            druhe.style.display = "block";
+            document.body.style.backgroundColor = "#326633";
+        }
+        function sunzmena() {
+            druhe.style.display = "none";
+            prve.style.display = "block";
+            document.body.style.backgroundColor = "#AF916D";
+        }
+    </script>
+</html>

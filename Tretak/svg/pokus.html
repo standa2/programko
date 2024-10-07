@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>SVG Eyes Follow Mouse</title>
+        <style>
+            svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <svg width="100%" height="100%">
+            <circle id="leftEye" cx="30" cy="30" r="10" fill="black" />
+            <circle id="rightEye" cx="70" cy="30" r="10" fill="black" />
+        </svg>
+        <script>
+            const leftEye = document.getElementById("leftEye")
+            const rightEye = document.getElementById("rightEye")
+            document.addEventListener("mousemove", (event) => {
+                const x = event.clientX
+                const y = event.clientY
+                const eyeRadius = 10
+                const eyeOffset = 30
+                const leftEyeX = x - eyeOffset
+                const rightEyeX = x + eyeOffset
+                leftEye.setAttribute("cx", leftEyeX)
+                rightEye.setAttribute("cx", rightEyeX)
+                const deltaY = y - 30 // Vertical center of the eyes
+                leftEye.setAttribute("cy", 30 + deltaY / 10)
+                rightEye.setAttribute("cy", 30 + deltaY / 10)
+            })
+        </script>
+    </body>
+</html>

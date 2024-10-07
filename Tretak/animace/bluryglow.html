@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                background-color: #181818;
+            }
+            .wrapper {
+                height: 100vh;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 100px;
+            }
+            .card {
+                width: 250px;
+                height: 350px;
+                border-radius: 25px;
+                background-color: #181818;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 20px 20px;
+                box-sizing: border-box;
+                box-shadow: 0 0 100px rgb(168, 173, 119);
+                line-height: 1.3;
+                animation: shrink 2s linear infinite alternate;
+            }
+            .nadpis {
+                color: white;
+                position: relative;
+            }
+            .nadpis::after {
+                content: "";
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: rgb(168, 173, 119);
+                position: absolute;
+                left: 50%;
+                translate: -50% 0;
+                z-index: -1;
+                filter: blur(50px);
+                animation: grow 2s linear infinite alternate;
+            }
+
+            @keyframes shrink {
+                100% {
+                    box-shadow: 0 0 70px rgb(168, 173, 119);
+                }
+            }
+
+            @keyframes grow {
+                100% {
+                    filter: blur(200px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1 class="nadpis">JIŘINO !!!!</h1>
+            <div class="card">NESPI ... BĚŽ DOMŮ VOLE !!!!</div>
+        </div>
+    </body>
+</html>

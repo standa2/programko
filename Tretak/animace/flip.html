@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      width: 250px;
+      height: 320px;
+      position: relative;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+    }
+
+    .card.flip .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .front {
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      position: absolute;
+      backface-visibility: hidden;
+      background-color: #3629c9;
+    }
+
+    .back {
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      position: absolute;
+      backface-visibility: hidden;
+      background-color: #eeebeb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
+  </div>
+  <script>
+    function flipCard(card) {
+      card.classList.toggle("flip");
+      if (card.classList.contains("flip")) {
+        const suits = ["♠", "♥", "♦", "♣"],
+          random = Math.floor(Math.random() * suits.length),
+          selectedSuit = suits[random],
+          colorSuit = card.querySelector(".back");
+
+        if (selectedSuit === "♥" || selectedSuit === "♦") {
+          colorSuit.textContent = selectedSuit;
+          colorSuit.style.color = "red";
+        } else {
+          colorSuit.textContent = selectedSuit;
+          colorSuit.style.color = "black";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

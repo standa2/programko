@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .circle {
+                width: 50px;
+                aspect-ratio: 1/1;
+                border: solid 5px rgb(168, 166, 166);
+                border-top: solid 5px rgb(56, 55, 55);
+                border-radius: 50%;
+                animation: loading 1s linear forwards infinite;
+            }
+            @keyframes loading {
+                100% {
+                    rotate: 360deg;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="circle"></div>
+        </div>
+    </body>
+</html>

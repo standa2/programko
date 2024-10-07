@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+}
+#prve {
+    display: block;
+}
+#druhe {
+    display: none;
+}
+#sunak {
+    position: relative;
+    top: 100px;
+    right: -706px;
+    width: 100px;
+    height: 100px;
+}
+#queen {
+    position: relative;
+    top: 100px;
+    right: -706px;
+    width: 100px;
+    height: 100px;
+}
+#nadpis1 {
+    color: darkgoldenrod;
+}
+#text1 {
+    font-family: "Rakkas";
+}
+#nadpis2 {
+    color: darkgoldenrod;
+}
+#text2 {
+    font-family: "Rakkas";
+}

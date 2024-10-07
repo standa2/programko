@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body></body>
+    <script>
+        let goebbels = []
+        let krop
+        let speed = 5
+        let score = 0
+
+        function preload() {
+            krop = loadImage("krop.jpg")
+        }
+        function setup() {
+            createCanvas(window.innerWidth, window.innerHeight)
+            setInterval(function () {
+                let newKrop = {
+                    x: random(0, window.innerWidth),
+                    y: random(0, window.innerHeight),
+                }
+                goebbels.push(newKrop)
+            }, 1000)
+        }
+        function draw() {
+            background(255)
+            krop.resize(100, 0)
+
+            textSize(16)
+            textAlign(RIGHT, TOP)
+            text("SCORE:" + score, width - 100, 10)
+
+            for (let hlava of goebbels) {
+                image(krop, hlava.x, hlava.y)
+                hlava.x -= speed
+                if (hlava.x <= 0) {
+                    let index = goebbels.indexOf(hlava)
+                    goebbels.splice(index, 1)
+                    score--
+                }
+            }
+        }
+        function mouseClicked() {
+            goebbels.forEach((hlava, index) => {
+                if (
+                    mouseX >= hlava.x &&
+                    mouseX <= hlava.x + krop.width &&
+                    mouseY >= hlava.y &&
+                    mouseY <= hlava.y + krop.height
+                ) {
+                    goebbels.splice(index, 1)
+                    score++
+                }
+            })
+        }
+    </script>
+</html>

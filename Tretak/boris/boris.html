@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="done.css" />
+    </head>
+    <body>
+        <div id="prve">
+            <img
+                id="sunak"
+                class="images"
+                src="https://www.rvcj.com/wp-content/uploads/2022/10/RISHI-SUNAK.jpg"
+                alt=""
+            /><br />
+            <h1 id="nadpis1">
+                Jak jsem se měl o prázdninách aneb deník nadšeného studenta
+            </h1>
+
+            <div id="text1">
+                boris jsem sal normale nikam jsu byl jen le v ostraveza babi.
+                boris jen jsem hral futbal a hral doma hry boris jsem takzvane
+                valel sunky boris. RAVI VOLE
+            </div>
+
+            <img
+                id="boris"
+                class="images"
+                src="https://media.tatler.com/photos/6141c86c4dfb3132b0d0f4c3/master/w_320%2Cc_limit/Boris-Johnson-2-tatler-28oct15_getty_b.jpg"
+                alt=""
+            />
+            <br />
+        </div>
+
+        <div id="druhe">
+            <img
+                id="queen"
+                class="images"
+                src="https://cdn.britannica.com/97/155297-050-E37867BF/Elizabeth-II-2007.jpg"
+                alt=""
+            /><br />
+
+            <h1 id="nadpis2">
+                Boris skolka zacala ty jeden kulisaku usatej mazej do lavice.
+            </h1>
+
+            <div id="text2">
+                a jeedeeeeeeeeeeeeeeeeemmmmmmmmmm picoooooooooooooooooo
+            </div>
+
+            <img
+                id="bartl"
+                class="images"
+                src="https://www.tyden.cz/obrazek/201603/56f3b2b2554d5/crop-963343-bartl_520x250.jpg"
+                alt=""
+            />
+        </div>
+    </body>
+    <script>
+        const sunak = document.querySelector("#sunak")
+        const queen = document.querySelector("#queen")
+        sunak.addEventListener("click", sunakzmena)
+        queen.addEventListener("click", queenzmena)
+
+        function sunakzmena() {
+            prve.style.display = "none"
+            druhe.style.display = "block"
+        }
+        function queenzmena() {
+            druhe.style.display = "none"
+            prve.style.display = "block"
+        }
+    </script>
+</html>
