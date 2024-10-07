@@ -16,7 +16,6 @@ pocet2 = 0
 root.configure(bg='white')
 
 cesta = "H:\\WET\\PRG\\Python\\gui\\data.csv"
-
 new_avarage = {}
 
 with open(cesta, "r") as file:
