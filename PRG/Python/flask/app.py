@@ -12,11 +12,11 @@ def bye():
 
 @app.route("/formular")
 def form():
-    name = request.args.get("name", default="______")
-    input_class = request.args.get("input_class", default="______")
-    message = request.args.get("message", default="______")
+    name = request.args.get("name")
+    input_class = request.args.get("input_class")
+    message = request.args.get("message")
 
-    if name != "______" and message != "______"  and input_class != "______" :
+    if name and message and input_class :
         return redirect(url_for("result",  name = name, input_class = input_class, message = message))
     
     return render_template("form.html")
