@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, g
-import sqlite3
+import sqlite3, random
 
 app = Flask(__name__)
 
@@ -36,20 +36,29 @@ def bye():
 def form():
     if request.method == "POST":
         name = request.form.get("name")
+        if len(name.split()) <= 1:
+            name = "error"
+        if len(name.split()) > 1:
+            name = name.title()
         input_class = request.form.get("input_class")
+        if len(input_class) >= 3:
+            input_class = "error"
         message = request.form.get("message")
-        if name and message and input_class :
-            return redirect(url_for("result",  name = name, input_class = input_class, message = message))
+        grade = random.randint(1,5)
+        cursor = get_db().cursor()
+        cursor.execute(
+            f"INSERT INTO students (student_name, class, student_message, grade) VALUES (?, ?, ?, ?)", (name, input_class, message, grade)
+        )
+        get_db().commit()
     
     return render_template("form.html")
 
 @app.route("/result")
 def result():
-    name = request.args.get("name", default="______")
-    input_class = request.args.get("input_class", default="______")
-    message = request.args.get("message", default="______")
-
-    return render_template("result.html",  name = name, input_class = input_class, message = message)
+    cursor = get_db().cursor()
+    cursor.execute("SELECT * FROM students")
+    rows = cursor.fetchall()
+    return render_template("result.html",  rows=rows)
     
 
 
