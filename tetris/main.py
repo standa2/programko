@@ -1,18 +1,24 @@
 # importuju co potrebuji
 import pygame
 import button
-import tkinter
 from sys import exit
 from map import World
+from tetris import Tetris
 
 pygame.init()
 
-screen_width = tkinter.Tk().winfo_screenwidth()
-screen_height = tkinter.Tk().winfo_screenheight()
-
 # obrazovka a hodinky
-screen = pygame.display.set_mode((screen_width,screen_height))
+screen_w = 1280
+screen_h = 800
+
+screen = pygame.display.set_mode((screen_w,screen_h))
 clock = pygame.time.Clock()
+
+key = pygame.key.get_pressed()
+
+# tetris
+tetris = Tetris(screen)
+
 
 
 # Fonty
@@ -114,10 +120,33 @@ game_tutorial = False
 
 # Cyklus
 while True:
+    trigger = False
+
     for event in pygame.event.get():
+        tetris.timer()
+
+
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+
+        elif event.type == pygame.KEYDOWN:
+            tetris.control(pressed_key=event.key)
+
+
+        elif event.type == tetris.thing:
+            trigger = True
+
+
+
+
+
+
+
+        
+
+
+
 
 # Start
     if game_started == True:
@@ -191,10 +220,20 @@ while True:
             game_tutorial = False
             game_playing = True
 
+
 # Hra
     if game_playing == True:
+
+
         pygame.display.update()
         Game.draw_background()
+
+        tetris.update(trigger)
+        tetris.draw()
+        tetris.control(key)
+
+        
+
 
         screen.blit(score_img, [1015, 320])
         screen.blit(top_score_img, [980, 500])
