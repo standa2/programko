@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="output"></p>
+    <script>
+        const user_input = window.prompt("Pokemon?")
+        const out = document.querySelector(".output")
+        async function fetchData(url) {
+            try{
+                const response = await fetch(url)
+                if (!response.ok){
+                    throw new Error
+                }
+                return await response.json()
+            }catch (error) {
+                console.error("ERROR", error)
+            }
+            
+            
+        }
+        async function processData() {
+            const pokemon = await fetchData(`https://pokeapi.co/api/v2/pokemon/${user_input}`)
+
+            if (pokemon){
+                out.innerText = pokemon["abilities"][0]["ability"]["name"]
+            }
+        }
+        processData()
+    </script>
+    
+</body>
+</html>

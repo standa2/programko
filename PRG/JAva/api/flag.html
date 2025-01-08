@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="name"></p>
+    <img id="vlajka" src="" alt="">
+
+    <script>
+        const out1 = document.querySelector(".name")
+
+        async function fetchData(url) {
+            try{
+                const response = await fetch(url)
+                if (!response.ok){
+                    throw new Error
+                }
+                return await response.json()
+            }catch (error) {
+                console.error("ERROR", error)
+            }
+            
+            
+        }
+        async function processData() {
+            const name = await fetchData(`https://randomuser.me/api/`)
+
+            if (name){
+                out1.innerText = name["results"][0]["name"]["first"] + " " + name["results"][0]["name"]["last"]
+            }
+        
+            const zeme = name["results"][0]["location"]["country"]
+            const flag = await fetchData(`https://restcountries.com/api/v3.1/${zeme}`)
+
+            if (zeme){
+                document.getElementById("vlajka").src = flag[0]["flags"]["png"]
+            }
+        }
+        processData()
+    </script>
+    
+</body>
+</html>
