@@ -77,34 +77,34 @@ class Tetris:
 
         if self.lines_destroyed < 10:
             self.level = 1
-            self.normal = 1000
-        if self.lines_destroyed > 10:
-            self.level = 2
             self.normal = 900
-        if self.lines_destroyed > 20:
-            self.level = 3
+        elif self.lines_destroyed > 10:
+            self.level = 2
             self.normal = 800
-        if self.lines_destroyed > 30:
-            self.level = 4
+        elif self.lines_destroyed > 20:
+            self.level = 3
             self.normal = 700
-        if self.lines_destroyed > 40:
-            self.level = 5
+        elif self.lines_destroyed > 30:
+            self.level = 4
             self.normal = 600
-        if self.lines_destroyed > 50:
-            self.level = 6
+        elif self.lines_destroyed > 40:
+            self.level = 5
             self.normal = 500
-        if self.lines_destroyed > 60:
-            self.level = 7
+        elif self.lines_destroyed > 50:
+            self.level = 6
             self.normal = 400
-        if self.lines_destroyed > 70:
-            self.level = 8
-            self.normal = 350
-        if self.lines_destroyed > 80:
-            self.level = 9
+        elif self.lines_destroyed > 60:
+            self.level = 7
             self.normal = 300
-        if self.lines_destroyed > 90:
+        elif self.lines_destroyed > 70:
+            self.level = 8
+            self.normal = 200
+        elif self.lines_destroyed > 80:
+            self.level = 9
+            self.normal = 150
+        elif self.lines_destroyed > 90:
             self.level = 10
-            self.normal = 250
+            self.normal = 100
 
 
     def images(self):

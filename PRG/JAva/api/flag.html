@@ -7,10 +7,12 @@
 </head>
 <body>
     <p class="name"></p>
-    <img id="vlajka" src="" alt="">
+    <img class="flag" src="" alt="">
 
     <script>
         const out1 = document.querySelector(".name")
+        const out2 = document.querySelector(".flag")
+
 
         async function fetchData(url) {
             try{
@@ -22,8 +24,6 @@
             }catch (error) {
                 console.error("ERROR", error)
             }
-            
-            
         }
         async function processData() {
             const name = await fetchData(`https://randomuser.me/api/`)
@@ -32,11 +32,9 @@
                 out1.innerText = name["results"][0]["name"]["first"] + " " + name["results"][0]["name"]["last"]
             }
         
-            const zeme = name["results"][0]["location"]["country"]
-            const flag = await fetchData(`https://restcountries.com/api/v3.1/${zeme}`)
-
-            if (zeme){
-                document.getElementById("vlajka").src = flag[0]["flags"]["png"]
+            const flag = await fetchData(`https://restcountries.com/v3.1/name/${name["results"][0]["location"]["country"]}`)
+            if (flag){
+                out2.src = flag[0]["flags"]["png"]
             }
         }
         processData()
