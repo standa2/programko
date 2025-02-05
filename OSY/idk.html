@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <input type="text" id="input">
+        <button id="button"> HAAHAHHAHAHAHAHAH </button>
+        <p id="output"></p>
+    </div>
+
+
+    <script>
+        const input = document.querySelector("#input")
+        const button = document.querySelector("#button")
+        const output = document.querySelector("#output")
+
+        button.addEventListener("click", () => {
+            output.innerHTML = input.value
+        })
+
+    </script>
+    
+</body>
+</html>
